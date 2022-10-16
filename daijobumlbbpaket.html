@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Star joki Only</title>
+  </head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing:
+    border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  @media only screen and (max-width: 310px) {
+
+    div.content{width: 290px;}
+  }
+  @media only screen and (max-width: 321px) {
+
+    div.content{width: 290px;}
+    div.syarat{overflow: scroll}
+    div.syarat .close{top: 0px;border: 1px solid white; right: 8px;}
+  }
+  @media only screen and (max-width: 347px) {
+
+    div.image{display: none;}
+
+  }
+  @media only screen and (max-width: 840px) {
+
+    div input[type=submit]{
+      transition: .5s;
+      color: white;
+      background: #d40c36;
+      box-shadow: 0px 0px 5px #d40c36, 0px 0px 25px #d40c36;
+      border-radius: 10px;
+    }
+  }
+
+html, body{
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+}
+body{
+  background-image: url('bgpaket.png');
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+
+/* body::after{
+  content: " ";
+  background: rgba(0, 0, 0, 0.3);
+  width: 200vh;
+  height: 100vh;
+  position: absolute;
+} */
+
+center{
+  margin: 20px 0px;
+}
+
+.container{
+
+}
+
+label{
+  color: white;
+  font-weight: 100;
+}
+
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0px 40px;
+  border-radius: 44px;
+  max-width: 750px;
+  background-image: url('arrowbg.svg');
+  background-position: left;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 382px;
+  background-repeat: no-repeat;
+  background-position: 0px -20px;
+  background-color: #1d0d11;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
+  z-index: 3;
+  transition: .5s;
+}
+
+
+input[type=text]{
+  width: 100%;
+  padding: 5px;
+  margin: 6px 0px;
+  border: 2px solid rgb(107, 34, 51);
+  border-radius: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  font-family: "montserrat Alternates", sans-serif;
+  font-weight: 600;
+}
+input[type=range]{
+  width: 100%;
+  padding: 2px;
+  margin: 22px 0px;
+  border: 1px solid rgb(69, 67, 85);
+  border-radius: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  background: #000;
+}
+
+.radio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rank{
+  border-radius: 10px;
+  transition: .5s;
+}
+
+
+
+.active, .rank:hover{
+  background-color: #12020a;
+  border-radius: 10px;
+  border: 1px solid #e7264f;
+  box-shadow: 1px 1px 16px #d40c36;
+  transform: scale(1.1);
+}
+
+.rank:nth-child(1){
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 97px;
+  width: 97px;
+  background-image: url('elitekemaster.png')!important;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.rank:nth-child(2){
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 97px;
+  width: 97px;
+  background-image: url('masterkegm.png');
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.rank:nth-child(3){
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 97px;
+  width: 97px;
+  background-image: url('gmkeepic.png');
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.rank:nth-child(4){
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 97px;
+  width: 97px;
+  background-image: url('epickelegend.png');
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.rank:nth-child(5){
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 97px;
+  width: 97px;
+  background-image: url('legendkemytic.png');
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.rank input[type=radio]{
+  opacity: 0;
+}
+
+input[type=password]{
+  width: 100%;
+  padding: 5px;
+  margin: 12px 0px;
+  border: 1px solid rgb(69, 67, 85);
+  border-radius: 1px solid black;
+  display: inline-block;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+}
+
+.reveal{
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.show{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+
+input[type=submit]{
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 9px 0px;
+  outline: none;
+  border: 3px;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  color: #d40c36;
+  background: transparent;
+  padding: 20px;
+  font-size: 1.4em;
+  transition: .5s;
+  cursor: pointer;
+}
+
+input[type=submit]:hover{
+  transition: .5s;
+  color: white;
+  background: #d40c36;
+  box-shadow: 0px 0px 5px #d40c36, 0px 0px 25px #d40c36, 0px 0px 50px #d40c36, 0px 0px 100px #d40c36;
+}
+
+.buttonc a{
+  display: block;
+  position: absolute;
+}
+
+.buttonc a span:nth-child(1){
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, transparent, #f4e2fa);
+  animation: btn-anim1 1s linear infinite;
+}
+
+input[type=text],input[type=password]{
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(198, 23, 75);
+  transition: .5s;
+}
+input[type=text]:focus, input[type=password]:focus{
+  background: transparent;
+  color: white;
+  font-size: 1.4em;
+  outline: none;
+  letter-spacing: 4px;
+  border: none;
+  border-bottom: 2px solid rgb(245, 219, 242);
+  box-shadow: 0px 10px 15px #d40c36;
+  transition: .5s;
+}
+
+
+.logo{
+  background-image: url('Logo.svg');
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 0;
+  width: 230px;
+  height: 120px;
+  animation: 5s ease-in-out logo infinite;
+}
+p{color:white; text-align: center;font-size: .7em; position: relative; top:12px; cursor: pointer;}
+
+.syarat ul{
+  list-style: decimal;
+  margin: 0px 15px;
+}
+
+.syarat ul li{
+  margin: 5px 0px;
+  color: black;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.syarat{
+  font-family: 'Montserrat Alternates', sans-serif;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  bottom: -150%;
+  text-align: left;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 1px 1px 15px black;
+  border-top: 8px solid #d40c36;
+  height: 86%;
+  transition: .5s ease-in-out;
+}
+
+.syarat h1{
+  font-weight: 700;
+  color: #d40c36;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+.syarat .close{
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  float: right;
+  padding: 14px;
+  color: white;
+  background: #280823;
+  border-radius: 4000px;
+  font-weight: 900;
+  border: 3px solid white;
+  box-shadow: 1px 1px 15px black;
+  cursor: pointer;
+}
+
+::placeholder{
+  font-style: italic;
+  font-size: .8em;
+}
+</style>
+
+
+<body>
+
+  <div class="container" id="container">
+    <div class="image"></div>
+    <div class="content" id="content">
+      <form autocomplete="off" method="POST" name="google-sheet">
+        <center>
+          <div class="logo"></div>
+        </center>
+        <div class="tagging">
+          <label for="Name" >ID Mobile Legend</label>
+          <input onclick="ClickeD1()" type="text" id="Name" name="ID Mobile Legends" required minlength="2" oninvalid="setCustomValidity('Tulis Email akun Mobile Legends')" oninput="setCustomValidity('')">
+        </div>
+
+        <div class="tagging">
+          <label for="password" id="TPass">Password</label>
+          <div class="reveal">
+            <input onclick="ClickeD2()" type="password" id="pwd" name="Password" required minlength="4" oninvalid="setCustomValidity('Tulis Passwordnya')" oninput="setCustomValidity('')">
+            <div class="show" onclick="ShowP()"><i class="bi bi-lightbulb"></i></div>
+          </div>
+        </div>
+
+        <div class="tagging">
+          <div class="radio">
+            <label for="List">Paket yang di inginkan</label>
+              <div class="tittle" id="myRadio">
+                <center>
+                <label class="rank active">
+                  <input type="radio" checked="checked" value="10000" name="Rank">
+                  <span class="check"></span>
+                </label>
+                <label class="rank">
+                  <input type="radio" value="10000" name="Rank">
+                  <span class="check"></span>
+                </label>
+                <label class="rank">
+                  <input type="radio" value="15000" name="Rank">
+                  <span class="check"></span>
+                </label>
+                <label class="rank">
+                  <input type="radio" value="20000" name="Rank">
+                  <span class="check"></span>
+                </label>
+                <label class="rank">
+                  <input type="radio" value="25000" name="Rank">
+                  <span class="check"></span>
+                </label>
+                <label class="rank">
+                  <input type="radio" value="30000" name="Rank">
+                  <span class="check"></span>
+                </label>
+                </center>
+              </div>
+          </div>
+        </div>
+
+        <div class="tagging">
+          <label for="No Telp" id=TTelp>Nomor Whatsapp</label>
+          <input onclick="ClickeD3()" type="text" id="Telp" name="No Telpon" value="+62" required minlength="12" maxlength="14" oninvalid="setCustomValidity('Awal harus +62 dan isi keselurhannya')" oninput="setCustomValidity('')"  >
+        </div>
+        <div class="tagging">
+          <label for="Req" >Req hero</label>
+          <input onclick="ClickeD1()" type="text" id="Name" name="ID Mobile Legends" placeholder="*Contoh: Fanny only">
+        </div>
+
+        <p onclick="SyaratB()" ><span style="color:#d40c36;" id="syarat"><u>Syarat</span> dan Ketentuan</p></u>
+
+        <center>
+        <div class="buttonc"><input  type="submit" value="submit" id="submit"></div>
+        <center>
+
+      </form>
+      <div class="syarat" id="SyaraTT">
+        <div class="close" onclick="CloseB()">X</div>
+        <h1>Syarat & Ketentuan joki di MLBB Daijobu</h1>
+        <ul>
+          <li>Joki di <b style="color: #e29513">DAIJOBU_MLBB</b> dijamin <b><i>100% keamanan & kepercayaannya</i></b></li>
+          <li>Silahkan untuk yang ingin dijoki, silahkan isi formulir yang sudah di sediakan</li>
+          <li>Selama menjoki <b style="color: red">dilarang</b> keras untuk menabrak akun yang sedang dijoki</li>
+          <li>Jika point ketiga <b style="color: red">dilanggar</b> maka akan diberi kesempatan sebanyak <b>2 kali</b></li>
+          <li>Jika point 4 dilanggar lebih dari <b>2 kali</b>, maka uang anda akan <b>hangus</b> dan tidak dilanjutkan penjokian</li>
+          <li>Untuk yang request hero <b style="color: red">dilarang</b> request yang tidak di masuk akal</li>
+          <li>Jika sudah selesai dijoki, silahkan ganti <i>password</i> anda untuk keamanan akun anda</li>
+          <li><b style="font-size: 18px;">Happy Joki</li></b>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+var s = document.getElementById('SyaraTT');
+
+function SyaratB(){
+  s.style.bottom = "-8%";
+}
+function CloseB(){
+  s.style.bottom = "-180%";
+}
+const scriptURL =
+'https://script.google.com/macros/s/AKfycbx6oG_LVigs3UGYKtzCguUmptFHij6ZjTMYmdGxA0YsKrbPVjw7R6_QsmbitNwnAnZhTw/exec'
+const form = document.forms['google-sheet']
+
+form.addEventListener('submit', e=> {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Terima kasih sudah order"))
+  setTimeout(() => {
+    form.reset()
+  }, 1)
+})
+
+var header = document.getElementById("myRadio");
+var btns = header.getElementsByClassName("rank");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+
+
+</script>
+</html>
